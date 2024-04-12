@@ -142,11 +142,11 @@ class BAM_EmptyLatentImageByRatio:
 
         # Calculate dimensions based on orientation
         if orientation == 'portrait':
-            height = round(base_size * long_side / short_side / 64) // 64 * 64
-            width = round(height * short_side / long_side / 64) // 64 * 64
+            height = round(base_size * long_side / short_side / 64) * 64
+            width = round(height * short_side / long_side / 64) * 64
         else:  # landscape
-            width = round(base_size * long_side / short_side / 64) // 64 * 64
-            height = round(width * short_side / long_side / 64) // 64 * 64
+            width = round(base_size * long_side / short_side / 64) * 64
+            height = round(width * short_side / long_side / 64) * 64
 
         latent = EmptyLatentImage().generate(int(width), int(height), batch_size)[0]
 
