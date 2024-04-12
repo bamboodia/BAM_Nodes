@@ -43,7 +43,7 @@ class BAM_CropToRatio:
     RETURN_NAMES = ("Cropped Image",)
     FUNCTION = "crop_to_ratio"
 
-    CATEGORY = "BAM Nodes/Utils"
+    CATEGORY = "BAM Nodes"
 
     def crop_to_ratio(self, Image, ratio, direction, position):
         _, oh, ow, _ = Image.shape
@@ -129,7 +129,7 @@ class BAM_EmptyLatentImageByRatio:
     RETURN_TYPES = ("LATENT", "INT", "INT")
     RETURN_NAMES = ("Latent", "Width", "Height")
     FUNCTION = "generate"
-    CATEGORY = "BAM Nodes/Utils"
+    CATEGORY = "BAM Nodes"
 
     def generate(self, ratio, model, orientation, batch_size):
         base_size = 512 if model == 'SD1.5' else 1024
@@ -165,7 +165,7 @@ class BAM_RandomImageFromFolder:
 
     FUNCTION = "load_images"
 
-    CATEGORY = "BAM Nodes/Images"
+    CATEGORY = "BAM Nodes"
 
     @classmethod
     def IS_CHANGED(cls):
@@ -223,7 +223,7 @@ class BAM_Random_Float:
     RETURN_TYPES = ("FLOAT",)
     FUNCTION = "return_randm_number"
 
-    CATEGORY = "BAM Nodes/Numbers"
+    CATEGORY = "BAM Nodes"
 
     def return_randm_number(self, minimum, maximum, seed, granularity):
         # Set Generator Seed
@@ -258,7 +258,7 @@ class BAM_OnOff:
     RETURN_TYPES = ("INT",)
     FUNCTION = "return_on_off"
 
-    CATEGORY = "BAM Nodes/Utils"
+    CATEGORY = "BAM Nodes"
 
     def return_on_off(self, on):
         return (1,) if on else (0,)
